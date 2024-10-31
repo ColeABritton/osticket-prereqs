@@ -18,34 +18,50 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- PHP manager for IIS - ensures PHP is correctly configured to run IIS
+- Rewrite module - facilitates URL rewriting and redirect users to URLs
+- VC_redist.x86 (redistributable) - osTicket utilizes Microsoft Visual C++ to ensure smooth operation
+- MySQL - for storing data into databases
+- HeidiSQL - interface for accessing MySQL
 
 <h2>Installation Steps</h2>
-
+First we will open Microsoft Edge and download the necesarry files to begin installation at <a href= https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD>osTicket-Installation-Files.zip</a>. Once downloaded find the folder, then right click and Extract All to your desktop for ease of access.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>
+<img src="https://i.imgur.com/Y4sLyc0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Next we will need to enable Internet Information Services. To do so utilize Windows search to find and open the Control panel, then select Programs -> Turn Windows features on or off, now navigate down to Internet Information Services and check the box to enable. We also need to enable CGI within the IIS which we can find by expanding Internet Information Services -> World Wide Web Services -> Application Development Features then check the box next to CGI to enable and click OK to save.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/mcssxOL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now return back to the osTicket-Installation-Files folder and begin installing PHPManagerIIS_V1.5.0, rewrite_amd64_en-US, and VC_redist.x86
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/5C3nb8V.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next we will need to create a new dierctory called C:\PHP, to do so open the C: drive within File Explorer and create a folder called PHP. We will now return to the osTicket-Installation-Files and extract the PHP zipped folder into the new directory C:\PHP 
+</p>
+<br />
+<img src="https://i.imgur.com/VrLjpLe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we will move on to install MySQL with Standard Configuration then create a username and password.
+</p>
+<br />
+<img src="https://i.imgur.com/MDRAmC7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Next utilize Windows search and type IIS then Run as administrator. Open PHP Manager then register new PHP version under PHP setup and select C:\PHP\php-cgi.exe. Return to the home screen of IIS and restart the server on the right hand side of the application.
+</p>
+<br />
+<img src="https://i.imgur.com/63lZDxi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Extract the osTicket-v1.15.8 from our Installation-Files folder and within the files move the "upload" folder into C:\inetpub\wwwroot, then rename the folder from upload to osTicket.
+</p>
+<br />
+<img src="https://i.imgur.com/TgTW6Dh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
