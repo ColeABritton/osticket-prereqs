@@ -69,11 +69,13 @@ Head back to IIS Manager and restart the server again. On the left panel you wil
 </p>
 <br />
 <img src="https://i.imgur.com/gxJUQqn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Extract the osTicket-v1.15.8 from our Installation-Files folder and within the files move the "upload" folder into C:\inetpub\wwwroot, then rename the folder from upload to osTicket.
+Open up file explorer and follow to C:\inetpub\wwwroot\osTicket\include find the file ost-sampleconfig.php, and rename it to ost-config.php. The next step will be editing permissions for ost-config.php by right clicking and opening properties -> security -> advanced then Disable inheritance and remove all inherited permissions. After that's done we will Add -> Principal -> Type Everyone -> Check Names -> OK then give everyone full control and hit ok again to save changes.
 </p>
 <br />
-<img src="https://i.imgur.com/TgTW6Dh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-Extract the osTicket-v1.15.8 from our Installation-Files folder and within the files move the "upload" folder into C:\inetpub\wwwroot, then rename the folder from upload to osTicket.
+<img src="https://i.imgur.com/vYZ9Nfp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Next we go back to osTicket-Installation-Files folder and install HeidiSQL. Once downloaded and opened select new and enter the credentials you made during the MySQL setup then click open. Now right click on Unnamed on the left panel and create a new database called osTicket. You can now head back and finish setting up osTicket in the browser filling out the necessary credentials then click install now.
 </p>
 <br />
-<img src="https://i.imgur.com/TgTW6Dh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<h2>osTicket Installed</h2>
+</p>
+Congrats! osTicket is fully installed and ready for use.
